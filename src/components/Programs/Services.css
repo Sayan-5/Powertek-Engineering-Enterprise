@@ -1,0 +1,555 @@
+/* =========================================
+   POWERTEK SERVICES
+========================================= */
+
+.programs-section {
+  position: relative;
+
+  width: 100%;
+
+  padding: 130px 6%;
+
+  overflow: hidden;
+
+  background: #081019;
+
+  color: #ffffff;
+}
+
+/* =========================================
+   BACKGROUND GLOW
+========================================= */
+
+.programs-glow {
+  position: absolute;
+
+  width: 500px;
+  height: 500px;
+
+  right: -200px;
+  top: 20%;
+
+  border-radius: 50%;
+
+  background: #28efd7;
+
+  opacity: 0.08;
+
+  filter: blur(120px);
+
+  pointer-events: none;
+}
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+.programs-container {
+  position: relative;
+
+  z-index: 2;
+
+  width: 100%;
+  max-width: 1250px;
+
+  margin: 0 auto;
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+.programs-header {
+  margin-bottom: 65px;
+}
+
+.programs-label {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin-bottom: 20px;
+
+  color: #28efd7;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 3px;
+}
+
+.programs-label span {
+  width: 35px;
+  height: 2px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #28efd7,
+      #f7841f
+    );
+}
+
+.programs-heading-row {
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: space-between;
+
+  gap: 50px;
+}
+
+.programs-heading-row h2 {
+  margin: 0;
+
+  font-size: clamp(55px, 7vw, 90px);
+
+  line-height: 0.9;
+
+  letter-spacing: -4px;
+
+  font-weight: 800;
+}
+
+.programs-heading-row h2 span {
+  background:
+    linear-gradient(
+      90deg,
+      #28efd7,
+      #f7841f
+    );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  color: transparent;
+}
+
+.programs-heading-row p {
+  max-width: 430px;
+
+  margin: 0 0 5px;
+
+  color: rgba(255, 255, 255, 0.55);
+
+  font-size: 15px;
+
+  line-height: 1.8;
+}
+
+/* =========================================
+   GRID
+========================================= */
+
+.programs-grid {
+  display: grid;
+
+  grid-template-columns: repeat(6, 1fr);
+
+  grid-template-rows: 320px 320px;
+
+  gap: 18px;
+}
+
+/* First large card */
+.program-card-1 {
+  grid-column: span 3;
+}
+
+/* Second large card */
+.program-card-2 {
+  grid-column: span 3;
+}
+
+/* Bottom cards */
+.program-card-3,
+.program-card-4,
+.program-card-5 {
+  grid-column: span 2;
+}
+
+/* =========================================
+   CARD
+========================================= */
+
+.program {
+  position: relative;
+}
+
+.program-card {
+  position: relative;
+
+  overflow: hidden;
+
+  border-radius: 22px;
+
+  background: #121c27;
+
+  cursor: pointer;
+
+  isolation: isolate;
+}
+
+.program-card img {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+
+  transition:
+    transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1),
+    filter 0.5s ease;
+}
+
+/* =========================================
+   IMAGE OVERLAY
+========================================= */
+
+.program-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 1;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(3, 9, 15, 0.9) 0%,
+      rgba(3, 9, 15, 0.25) 55%,
+      rgba(3, 9, 15, 0.05) 100%
+    );
+
+  transition:
+    background 0.5s ease;
+}
+
+/* =========================================
+   NUMBER
+========================================= */
+
+.program-number {
+  position: absolute;
+
+  top: 22px;
+  right: 22px;
+
+  z-index: 3;
+
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.2);
+
+  border-radius: 50%;
+
+  background:
+    rgba(0, 0, 0, 0.25);
+
+  backdrop-filter: blur(10px);
+
+  color: rgba(255, 255, 255, 0.8);
+
+  font-size: 11px;
+
+  font-weight: 700;
+}
+
+/* =========================================
+   CARD CONTENT
+========================================= */
+
+.program-card-bottom {
+  position: absolute;
+
+  left: 25px;
+  right: 25px;
+  bottom: 23px;
+
+  z-index: 3;
+
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: space-between;
+}
+
+.program-small-title {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: #28efd7;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+.program-card h3 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 25px;
+
+  line-height: 1.05;
+
+  letter-spacing: -0.5px;
+
+  font-weight: 700;
+}
+
+/* =========================================
+   ARROW
+========================================= */
+
+.program-arrow {
+  width: 48px;
+  height: 48px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  color: #081019;
+
+  font-size: 20px;
+
+  transform: translateY(5px);
+
+  transition:
+    transform 0.4s ease,
+    background 0.4s ease;
+}
+
+/* =========================================
+   HOVER
+========================================= */
+
+.program-card:hover img {
+  transform: scale(1.08);
+
+  filter: saturate(1.1);
+}
+
+.program-card:hover .program-overlay {
+  background:
+    linear-gradient(
+      to top,
+      rgba(3, 9, 15, 0.95),
+      rgba(3, 9, 15, 0.25)
+    );
+}
+
+.program-card:hover .program-arrow {
+  transform:
+    translateY(0)
+    rotate(8deg);
+
+  background:
+    linear-gradient(
+      135deg,
+      #28efd7,
+      #f7841f
+    );
+}
+
+.program-card::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 4;
+
+  border-radius: 22px;
+
+  border: 1px solid transparent;
+
+  pointer-events: none;
+
+  transition:
+    border-color 0.4s ease;
+}
+
+.program-card:hover::after {
+  border-color:
+    rgba(40, 239, 215, 0.35);
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+  .programs-section {
+    padding: 100px 5%;
+  }
+
+  .programs-heading-row {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 25px;
+  }
+
+  .programs-heading-row p {
+    max-width: 600px;
+  }
+
+  .programs-grid {
+    grid-template-columns: repeat(2, 1fr);
+
+    grid-template-rows:
+      300px
+      300px
+      300px;
+  }
+
+  .program-card-1,
+  .program-card-2,
+  .program-card-3,
+  .program-card-4,
+  .program-card-5 {
+    grid-column: span 1;
+  }
+
+  .program-card-1,
+  .program-card-2 {
+    grid-column: span 1;
+  }
+
+  .program-card-5 {
+    grid-column: span 2;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+  .programs-section {
+    padding: 80px 5%;
+  }
+
+  .programs-header {
+    margin-bottom: 40px;
+  }
+
+  .programs-label {
+    font-size: 9px;
+
+    letter-spacing: 2px;
+  }
+
+  .programs-heading-row h2 {
+    font-size: 52px;
+
+    letter-spacing: -2px;
+  }
+
+  .programs-heading-row p {
+    font-size: 14px;
+  }
+
+  .programs-grid {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 14px;
+  }
+
+  .program-card {
+    width: 100%;
+
+    height: 280px;
+
+    border-radius: 18px;
+  }
+
+  .program-card-bottom {
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+  }
+
+  .program-card h3 {
+    font-size: 22px;
+  }
+
+  .program-arrow {
+    width: 42px;
+    height: 42px;
+
+    font-size: 17px;
+  }
+
+  .program-number {
+    top: 18px;
+    right: 18px;
+
+    width: 36px;
+    height: 36px;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 380px) {
+  .program-card {
+    height: 250px;
+  }
+
+  .programs-heading-row h2 {
+    font-size: 45px;
+  }
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+
+    animation-iteration-count: 1 !important;
+
+    transition-duration: 0.01ms !important;
+  }
+}

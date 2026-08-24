@@ -1,0 +1,687 @@
+/* =========================================
+   POWERTEK MODERN HERO
+========================================= */
+
+.hero {
+  position: relative;
+
+  width: 100%;
+  min-height: 100vh;
+
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-image: url("../../assets/hero.png");
+
+  background-size: cover;
+  background-position: center;
+
+  color: #ffffff;
+}
+
+/* =========================================
+   DARK OVERLAY
+========================================= */
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      115deg,
+      rgba(3, 10, 18, 0.94) 0%,
+      rgba(3, 10, 18, 0.72) 45%,
+      rgba(3, 10, 18, 0.48) 100%
+    );
+
+  z-index: 1;
+}
+
+/* =========================================
+   ANIMATED GRID
+========================================= */
+
+.hero-grid {
+  position: absolute;
+  inset: 0;
+
+  z-index: 2;
+
+  opacity: 0.13;
+
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.12) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.12) 1px,
+      transparent 1px
+    );
+
+  background-size: 70px 70px;
+
+  mask-image:
+    linear-gradient(
+      to bottom,
+      black,
+      transparent 90%
+    );
+
+  animation: gridMove 18s linear infinite;
+}
+
+@keyframes gridMove {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(70px);
+  }
+}
+
+/* =========================================
+   GLOW EFFECTS
+========================================= */
+
+.hero-glow {
+  position: absolute;
+
+  width: 500px;
+  height: 500px;
+
+  border-radius: 50%;
+
+  filter: blur(100px);
+
+  opacity: 0.18;
+
+  z-index: 2;
+
+  pointer-events: none;
+}
+
+.hero-glow-one {
+  top: 10%;
+  right: -150px;
+
+  background: #28efd7;
+
+  animation: glowFloatOne 8s ease-in-out infinite;
+}
+
+.hero-glow-two {
+  bottom: -200px;
+  left: -100px;
+
+  background: #f7841f;
+
+  animation: glowFloatTwo 10s ease-in-out infinite;
+}
+
+@keyframes glowFloatOne {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(-60px, 40px);
+  }
+}
+
+@keyframes glowFloatTwo {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(60px, -40px);
+  }
+}
+
+/* =========================================
+   HERO CONTENT
+========================================= */
+
+.hero-content {
+  position: relative;
+
+  z-index: 5;
+
+  width: min(1100px, 90%);
+
+  margin-top: 60px;
+
+  text-align: left;
+
+  animation: heroEnter 1s ease forwards;
+}
+
+@keyframes heroEnter {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================================
+   BADGE
+========================================= */
+
+.hero-badge {
+  display: inline-flex;
+
+  align-items: center;
+  gap: 10px;
+
+  padding: 9px 15px;
+
+  margin-bottom: 22px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.15);
+
+  border-radius: 50px;
+
+  background: rgba(255, 255, 255, 0.06);
+
+  backdrop-filter: blur(10px);
+
+  color: rgba(255, 255, 255, 0.75);
+
+  font-size: 11px;
+  font-weight: 600;
+
+  letter-spacing: 2px;
+}
+
+.hero-badge span {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #28efd7;
+
+  box-shadow:
+    0 0 12px #28efd7;
+
+  animation: badgePulse 2s infinite;
+}
+
+@keyframes badgePulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.4;
+    transform: scale(1.5);
+  }
+}
+
+/* =========================================
+   COMPANY NAME
+========================================= */
+
+.hero-company {
+  margin: 0 0 12px;
+
+  color: #28efd7;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  letter-spacing: 3px;
+
+  text-transform: uppercase;
+}
+
+/* =========================================
+   MAIN HEADING
+========================================= */
+
+.hero-content h1 {
+  margin: 0;
+
+  font-size: clamp(60px, 8vw, 105px);
+
+  line-height: 0.94;
+
+  font-weight: 800;
+
+  letter-spacing: -4px;
+
+  color: #ffffff;
+}
+
+.hero-content h1 span {
+  background:
+    linear-gradient(
+      90deg,
+      #ffffff 0%,
+      #28efd7 45%,
+      #f7841f 100%
+    );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  color: transparent;
+
+  background-size: 200% auto;
+
+  animation: gradientText 5s linear infinite;
+}
+
+@keyframes gradientText {
+  0% {
+    background-position: 0% center;
+  }
+
+  100% {
+    background-position: 200% center;
+  }
+}
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.hero-description {
+  max-width: 590px;
+
+  margin: 28px 0 0;
+
+  color: rgba(255, 255, 255, 0.68);
+
+  font-size: 18px;
+
+  line-height: 1.7;
+
+  font-weight: 400;
+}
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.hero-actions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 16px;
+
+  margin-top: 35px;
+}
+
+.hero-btn {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  padding: 7px 8px 7px 22px;
+
+  background: #ffffff;
+
+  color: #081019;
+
+  border-radius: 50px;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  text-decoration: none;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.hero-btn:hover {
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 15px 35px rgba(255, 255, 255, 0.15);
+}
+
+.arrow-circle {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #081019;
+
+  transition: transform 0.3s ease;
+}
+
+.arrow-circle img {
+  width: 15px;
+
+  filter: invert(1);
+
+  transition: transform 0.3s ease;
+}
+
+.hero-btn:hover .arrow-circle {
+  transform: rotate(-10deg);
+}
+
+.hero-btn:hover .arrow-circle img {
+  transform: translateX(3px);
+}
+
+/* =========================================
+   SECONDARY BUTTON
+========================================= */
+
+.hero-secondary-btn {
+  padding: 15px 23px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.2);
+
+  border-radius: 50px;
+
+  background: rgba(255, 255, 255, 0.04);
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  backdrop-filter: blur(10px);
+
+  cursor: pointer;
+
+  transition:
+    background 0.3s ease,
+    border 0.3s ease,
+    transform 0.3s ease;
+}
+
+.hero-secondary-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+
+  border-color: rgba(40, 239, 215, 0.5);
+
+  transform: translateY(-3px);
+}
+
+/* =========================================
+   SCROLL INDICATOR
+========================================= */
+
+.scroll-indicator {
+  position: absolute;
+
+  right: 5%;
+  bottom: 45px;
+
+  z-index: 5;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  transform: rotate(90deg);
+
+  transform-origin: right center;
+}
+
+.scroll-indicator span {
+  width: 35px;
+  height: 1px;
+
+  background: rgba(255, 255, 255, 0.5);
+
+  position: relative;
+}
+
+.scroll-indicator span::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  top: -2px;
+
+  width: 8px;
+  height: 5px;
+
+  background: #28efd7;
+
+  animation: scrollLine 2s infinite;
+}
+
+@keyframes scrollLine {
+  0% {
+    left: 0;
+    opacity: 0;
+  }
+
+  30% {
+    opacity: 1;
+  }
+
+  70% {
+    opacity: 1;
+  }
+
+  100% {
+    left: 28px;
+    opacity: 0;
+  }
+}
+
+.scroll-indicator p {
+  margin: 0;
+
+  font-size: 9px;
+
+  letter-spacing: 3px;
+
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* =========================================
+   BOTTOM GRADIENT
+========================================= */
+
+.hero-bottom-gradient {
+  position: absolute;
+
+  bottom: 0;
+  left: 0;
+
+  width: 100%;
+  height: 180px;
+
+  z-index: 4;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(3, 10, 18, 0.8),
+      transparent
+    );
+
+  pointer-events: none;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+  .hero-content {
+    width: 90%;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(55px, 10vw, 80px);
+
+    letter-spacing: -3px;
+  }
+
+  .hero-description {
+    font-size: 16px;
+  }
+
+  .scroll-indicator {
+    display: none;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+  .hero {
+    min-height: 100svh;
+
+    background-position: 60% center;
+  }
+
+  .hero-content {
+    width: 90%;
+
+    margin-top: 35px;
+
+    text-align: center;
+  }
+
+  .hero-badge {
+    font-size: 8px;
+
+    letter-spacing: 1.5px;
+
+    padding: 8px 12px;
+  }
+
+  .hero-company {
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    line-height: 1.5;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(48px, 15vw, 68px);
+
+    line-height: 0.98;
+
+    letter-spacing: -2px;
+  }
+
+  .hero-description {
+    margin: 22px auto 0;
+
+    max-width: 350px;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+  }
+
+  .hero-actions {
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    margin-top: 28px;
+  }
+
+  .hero-btn {
+    font-size: 13px;
+  }
+
+  .hero-secondary-btn {
+    font-size: 13px;
+
+    padding: 14px 20px;
+  }
+
+  .hero-glow {
+    width: 300px;
+    height: 300px;
+
+    filter: blur(80px);
+  }
+
+  .hero-grid {
+    background-size: 45px 45px;
+  }
+}
+
+/* =========================================
+   VERY SMALL MOBILE
+========================================= */
+
+@media (max-width: 380px) {
+  .hero-content h1 {
+    font-size: 44px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+
+    width: 100%;
+  }
+
+  .hero-btn,
+  .hero-secondary-btn {
+    width: 100%;
+
+    justify-content: center;
+  }
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+
+    scroll-behavior: auto !important;
+
+    transition-duration: 0.01ms !important;
+  }
+}
