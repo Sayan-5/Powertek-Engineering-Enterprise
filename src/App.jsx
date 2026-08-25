@@ -17,7 +17,6 @@ const HomeContent = () => {
       <Hero />
 
       <div className="container">
-
         {/* ================= ABOUT ================= */}
         <section id="about">
           <About />
@@ -42,7 +41,6 @@ const HomeContent = () => {
         <section id="contact">
           <Contact />
         </section>
-
       </div>
     </>
   );
@@ -54,15 +52,11 @@ const App = () => {
       <Navbar />
 
       <Routes>
-        <Route
-          path="/"
-          element={<HomeContent />}
-        />
+        {/* Home page */}
+        <Route path="/" element={<HomeContent />} />
 
-        <Route
-          path="/solar-power"
-          element={<SolarPower />}
-        />
+        {/* Solar Power page */}
+        <Route path="/solar-power" element={<SolarPower />} />
       </Routes>
 
       <Footer />
